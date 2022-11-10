@@ -8,16 +8,11 @@
   let page = 1;
   let maxPage = -1;
 
-  // 최초 호출
-  const movies = await getMovies();
-  page += 1;
-  renderMovies(movies);
-
   // 검색 버튼 클릭
   searchBtnEl.addEventListener("click", async (event) => {
     event.preventDefault();
     let title = searchTxtEl.value;
-    const movies = await getMovies(1, title);
+    const movies = await getMovies(title, 1);
 
     initMovies();
 
@@ -31,12 +26,12 @@
   // more 버튼 클릭
   moreBtnEl.addEventListener("click", async () => {
     let title = searchTxtEl.value;
-    const movies = await getMovies(page, title);
+    const movies = await getMovies(title, page);
     page += 1;
     renderMovies(movies);
   });
 
-  async function getMovies(page = 1, title = "avengers") {
+  async function getMovies(title = "", page = 1) {
     const res = await fetch(
       `https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}`
     );
@@ -51,14 +46,19 @@
       el.classList.add("movie");
 
       const h1El = document.createElement("h1");
-      h1El.textContent = [movie.Title, movie.Year];
+      h1El.textContent = movie.Title;
       h1El.addEventListener("click", () => {
         console.log(movie.Title);
       });
-      const imgEl = document.createElement("img");
-      imgEl.src = movie.Poster;
 
-      moviesEl.append(h1El, imgEl);
+      const imgEl = document.createElement("img");
+      imgEl.src =
+        movie.Poster === "N/A"
+          ? `https://2.bp.blogspot.com/-7fdJ0sJ_QrI/U4W-v8caIpI/AAAAAAAABxo/e7_hvfnNVFU/s1600/img.gif`
+          : movie.Poster;
+      el.append(h1El, imgEl);
+
+      moviesEl.append(el);
     }
   }
 
