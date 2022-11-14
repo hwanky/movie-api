@@ -18,9 +18,6 @@
     let num = searchNumEl.value;
     let year = searchYearEl.value;
 
-    console.log(num);
-    console.log(year);
-
     initMovies();
     if (title) {
       const movies = await getMovies(title, page, type, year);
@@ -29,6 +26,7 @@
         addPage();
       }
       renderMovies(movies);
+      moreBtnEl.style.display = "block";
     } else {
       alert("제목을 입력해 주세요.");
     }
@@ -48,6 +46,7 @@
     page += 1;
     renderMovies(movies);
   }
+
   // api 호출 함수
   async function getMovies(title = "", page = 1, type = "", year = "") {
     const res = await fetch(
@@ -70,6 +69,10 @@
         console.log(movie.Year);
         console.log(movie.Type);
       });
+
+      const yearEl = document.createElement("span");
+      yearEl.textContent = movie.Year;
+      h1El.append(yearEl);
 
       const imgEl = document.createElement("img");
       imgEl.src =
