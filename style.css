@@ -28,7 +28,7 @@
   margin: auto;
   text-align: center;
   font-size: 20px;
-  color: wheat;
+  color: white;
   padding: 10px 0;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
@@ -38,6 +38,7 @@
   display: block;
   font-weight: bold;
   margin-top: 10px;
+  color: wheat;
 }
 
 .movie img {
