@@ -21,13 +21,14 @@
     let year = searchYearEl.value;
 
     initMovies();
+
     if (title) {
       const movies = await getMovies(title, page, type, year);
+      moreBtnEl.style.display = "block";
       for (let i = 0; i < num; i++) {
         addPage();
       }
       renderMovies(movies);
-      moreBtnEl.style.display = "block";
     } else {
       alert("제목을 입력해 주세요.");
     }
@@ -66,6 +67,11 @@
 
   // 영화 리스트 렌더링 함수
   function renderMovies(movies) {
+    if (!movies) {
+      alert("영화가 없습니다.");
+      moreBtnEl.style.display = "none";
+      return;
+    }
     for (const movie of movies) {
       const el = document.createElement("div");
       el.classList.add("movie");
