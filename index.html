@@ -9,25 +9,56 @@
     <script defer src="./main.js"></script>
   </head>
   <body>
-    <form id="search-form">
-      <input class="search-text" type="text" placeholder="영화 제목 입력" />
-      <select class="search-type">
-        <option value="movie">movie</option>
-        <option value="series">series</option>
-        <option value="episode">episode</option>
-      </select>
-      <select class="search-num">
-        <option value="0">10</option>
-        <option value="1">20</option>
-        <option value="2">30</option>
-      </select>
-      <select class="search-year">
-        <option value="">All Years</option>
-      </select>
-      <button class="search-btn" type="submit">검색</button>
-    </form>
+    <header>
+      <a href="./index.html"> <div class="home">Home</div></a>
+    </header>
 
-    <div class="movies"></div>
-    <button class="more-btn">More</button>
+    <div class="container">
+      <div class="main-title">
+        <h1>
+          OMDB API <br />
+          Movie Search Site
+        </h1>
+      </div>
+      <div class="main-info">
+        <p>
+          찾고 싶은 영화를 검색하세요! <br />
+          이미지를 클릭하면 상세 정보가 나타납니다.
+        </p>
+      </div>
+      <div class="search">
+        <form id="search-form">
+          <input class="search-text" type="text" placeholder="영화 제목 입력" />
+          <select class="search-type">
+            <option value="movie">movie</option>
+            <option value="series">series</option>
+            <option value="episode">episode</option>
+          </select>
+          <select class="search-num">
+            <option value="0">10</option>
+            <option value="1">20</option>
+            <option value="2">30</option>
+          </select>
+          <select class="search-year">
+            <option value="">All Years</option>
+          </select>
+          <button class="search-btn" type="submit">검색</button>
+        </form>
+      </div>
+
+      <div class="movies">
+        <div class="before-text">
+          <p>Please enter the movie title.</p>
+        </div>
+      </div>
+      <button class="more-btn">More</button>
+    </div>
+
+    <footer>
+      <a href="./index.html"> <div class="home">Home</div></a>
+      <a href="https://github.com/hwanky">
+        <div class="home">(c)2022 hwanky</div></a
+      >
+    </footer>
   </body>
 </html>

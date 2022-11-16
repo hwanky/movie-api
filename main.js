@@ -150,13 +150,13 @@
     for (let i = 0; i < movie.Ratings.length; i++) {
       const ratingImg = document.createElement("img");
       ratingImg.src = `../img/Rating${i}.png`;
-      ratingImg.classList.add(`rating-img${i}`);
+      ratingImg.classList.add("rating-img");
 
       const ratingValue = document.createElement("span");
       ratingValue.textContent = movie.Ratings[i].Value;
 
       const ratingEl = document.createElement("div");
-      ratingEl.classList.add(`rating${i}`);
+      ratingEl.classList.add("rating");
       ratingEl.append(ratingImg, ratingValue);
       ratings.appendChild(ratingEl);
     }
