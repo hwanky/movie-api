@@ -194,10 +194,11 @@
     genre.append(genreTitle, genreEl);
 
     const imgEl = document.createElement("img");
+    hpImg = movie.Poster.replace("SX300", "SX700");
     imgEl.src =
       movie.Poster === "N/A"
         ? `https://2.bp.blogspot.com/-7fdJ0sJ_QrI/U4W-v8caIpI/AAAAAAAABxo/e7_hvfnNVFU/s1600/img.gif`
-        : movie.Poster;
+        : hpImg;
 
     imgEl.classList.add("detail-img");
 
