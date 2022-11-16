@@ -19,6 +19,7 @@
 .movie {
   --size: 300px;
   position: relative;
+  cursor: pointer;
 }
 
 .movie h1 {
