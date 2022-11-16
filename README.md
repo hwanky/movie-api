@@ -2,7 +2,7 @@
 
 ## 배포 주소
 
-[DEMO](https://marvelous-moxie-925932.netlify.app/)
+[DEMO](https://animated-crostata-2887a0.netlify.app/)
 
 ## 🛠 사용 기술
 
